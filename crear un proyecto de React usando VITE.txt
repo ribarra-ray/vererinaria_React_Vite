@@ -1,0 +1,46 @@
+
+crear un proyecto de react usando VITE
+
+1- Abrir PowerShell (es como cdm) y ubicarte en la carpeta donde vas a poner el proyecto (utilizando cd)
+2- npm init vite@latest (despues aparece tipo wizar)
+3- Escribes el NombreProyecto
+4- Selecciona el framework React
+5- Selecciona la variante JS
+6- Ubicas la nueva carpeta cd NombreProyecto
+7- npm install
+8- npm run dev
+
+Ya se puede cargar la nueva carpeta creada en VSCode
+Local:   http://localhost:5173/
+
+Agregar estilos Tailwind
+1- Terminal/nueva terminal npm i -D tailwindcss postcss autoprefixer
+2- Crear archivo de configuracion npx tailwindcss init -p     
+3- En index.css agregar las directivas 
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+4- En Tailwind.config.js agregar la ruta de los ficheros que lo tiene que cargar, el fichero index.html  y los .jsx
+	
+	export default {
+	  //los ficheros donde se aplican los estilos, index.html y componentes jsx 
+	  //("./src/**/*.jsx" => en el mismo nivel/src/todas las carpetas y ficheros recursivamente/*.jsx)
+	  content: ["./index.html", "./src/**/*.jsx"],//aca se agregan
+	  theme: {
+		extend: {},
+	  },
+	  plugins: [],
+	}
+	
+Despliegue del proyecto en servidores 
+1- Ir a Tailwind.config.js y modificar purge: ["index.html", "./src/**/*.jsx"]  //( purge puede ser content )
+2- Desde powerShell, ubicarte en la carpeta del proyecto y ejecutar npm run build
+
+
+1- https://www.netlify.com/		(es gratis)
+	
+	Hacerte de una cuenta
+	Ir a Site
+	
+	
+2- https://vercel.com/
